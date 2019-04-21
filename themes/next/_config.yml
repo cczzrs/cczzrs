@@ -659,7 +659,15 @@ valine:
   notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   placeholder: Just go go # comment box placeholder
-  avatar: mm # gravatar style
+  #''	        Gravatar官方图形	Gravatar官方图形
+  #mp	        神秘人(一个灰白头像)	神秘人(一个灰白头像)
+  #identicon	抽象几何图形	抽象几何图形
+  #monsterid	小怪物	小怪物
+  #wavatar	  用不同面孔和背景组合生成的头像	用不同面孔和背景组合生成的头像
+  #retro	    八位像素复古头像	八位像素复古头像
+  #robohash	  机器人	一种具有不同颜色、面部等的机器人
+  #hide	 	    不显示头像
+  avatar: wavatar # gravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
   language: # language, available values: en, zh-cn
