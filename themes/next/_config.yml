@@ -100,7 +100,7 @@ creative_commons:
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
   enable: false
-  permalink: https://github.com/yourname
+  permalink: https://github.com/cczzrs
   title: Follow me on GitHub
 
 
@@ -157,17 +157,23 @@ baidu_push: false
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 # External url should start with http:// or https://
 menu:
+  # 主页
   home: / || home
-  me: /me/ || me
-  about: /about/ || user
+  # 归档页
   archives: /archives/ || archive
+  # 标签页
   tags: /tags/ || tags
+  # 分类页
   categories: /categories/ || th
-  schedule: /schedule/ || calendar
   sitemap: /sitemap.xml || sitemap
-  commonweal: /404/ || heartbeat
-  message: /Message/ || Message
-  search: /Search/ || Search
+  # 留言板页
+  message: /Message/ || comments
+  # 我的页
+  me: /me/ || user
+  # 公益 404
+  commonweal: /commonweal/ || heartbeat
+
+  #schedule: /schedule/ || calendar
 
 # Enable / Disable menu icons / item badges.
 menu_settings:
@@ -179,10 +185,10 @@ menu_settings:
 # Scheme Settings
 # ---------------------------------------------------------------
 
-# Schemes
-scheme: Muse
+# Schemes 站点主题样式
+#scheme: Muse
 #scheme: Mist
-#scheme: Pisces
+scheme: Pisces
 #scheme: Gemini
 
 
@@ -200,8 +206,9 @@ site_state: true
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  #GitHub: https://github.com/yourname || github
-  #E-Mail: mailto:yourname@gmail.com || envelope
+  GitHub: https://github.com/cczzrs || github
+  E-Mail: mailto:cwt@cczzrs.com || envelope
+  DockerHub: https://hub.docker.com/u/cczzrs || dockerhub
   #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
@@ -219,10 +226,11 @@ social_icons:
 
 # Blog rolls
 links_icon: link
-links_title: Links
+links_title: Links 友情链接
 links_layout: block
 #links_layout: inline
 links:
+  # rss: /atom.xml
   #Title: http://example.com
 
 # Sidebar Avatar
@@ -230,7 +238,7 @@ avatar:
   # In theme directory (source/images): /images/avatar.gif
   # In site directory (source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
-  url: #/images/avatar.gif
+  url: /images/cczzrs.jpg #/images/avatar.gif
   # If true, the avatar would be dispalyed in circle.
   rounded: false
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
@@ -244,7 +252,8 @@ toc:
   # Automatically add list number to toc.
   number: true
   # If true, all words will placed on next lines if header width longer then sidebar width.
-  wrap: false
+  # 每行目录超长自动换行
+  wrap: true
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
   expand_all: false
   # Maximum heading depth of generated toc. You can set it in one post through `toc_max_depth` in Front Matter.
@@ -270,16 +279,16 @@ sidebar:
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
   offset: 12
   # Enable sidebar on narrow view (only for Muse | Mist).
-  onmobile: false
+  onmobile: true
   # Click any blank part of the page to close sidebar (only for Muse | Mist).
-  dimmer: false
+  dimmer: true
 
 back2top:
   enable: true
   # Back to top in sidebar.
-  sidebar: false
+  sidebar: true
   # Scroll percent label in b2t button.
-  scrollpercent: false
+  scrollpercent: true
 
 # A button to open designated chat widget in sidebar.
 # Firstly, you need enable the chat service you want to activate its sidebar button.
@@ -368,6 +377,11 @@ reward:
   #wechatpay: /images/wechatpay.png
   #alipay: /images/alipay.png
   #bitcoin: /images/bitcoin.png
+  enable: true
+  # 打赏功能
+  comment: 梦想还是要有的，万一实现了呢。
+  wechatpay: /images/wechat.jpg
+  alipay: /images/alipay.jpg
 
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
@@ -443,17 +457,22 @@ tagcloud:
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 
-font:
-  enable: false
+#font:
+#  enable: false
 
   # Uri of fonts host, e.g. //fonts.googleapis.com (Default).
-  host:
+#  host:
 
   # Font options:
   # `external: true` will load this font family from `host` above.
   # `family: Times New Roman`. Without any quotes.
   # `size: xx`. Use `px` as unit.
-
+font:
+  enable: true
+  # 外链字体库地址，例如 //fonts.googleapis.com (默认值)
+  # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
+  # fonts.lug.ustc.edu.cn是中科大的源,解决Hexo NexT主题访问慢
+  host: //fonts.lug.ustc.edu.cn
   # Global font settings used for all elements in <body>.
   global:
     external: true
@@ -461,7 +480,7 @@ font:
     size:
 
   # Font settings for Headlines (H1, H2, H3, H4, H5, H6).
-  # Fallback to `global` font settings.
+  # Fallback to `global` font settings.custom
   headings:
     external: true
     family:
@@ -634,9 +653,9 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # More info available at https://valine.js.org
 valine:
-  enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
+  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
+  appid: WEMzkN3cVFwbGFdtMSsGRmmw-9Nh9j0Va # your leancloud application appid
+  appkey: XjMXac055sB9mSqH4FLk5OEp # your leancloud application appkey
   notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   placeholder: Just go go # comment box placeholder
@@ -725,16 +744,16 @@ likely:
 # Weibo,Wechat,Douban,QQZone,Twitter,Facebook,Linkedin,Mailto,Reddit,Delicious,StumbleUpon,Pinterest,
 # GooglePlus,Tumblr,GoogleBookmarks,Newsvine,Evernote,Friendfeed,Vkontakte,Odnoklassniki,Mailru
 needmoreshare2:
-  enable: false
+  enable: true
   postbottom:
-    enable: false
+    enable: true
     options:
       iconStyle: box
       boxForm: horizontal
       position: bottomCenter
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
   float:
-    enable: false
+    enable: true
     options:
       iconStyle: box
       boxForm: horizontal
@@ -862,7 +881,7 @@ algolia_search:
 # Local search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto
@@ -973,7 +992,7 @@ motion:
 # Choose only one variant, do not need to install both.
 # To install 2.x: https://github.com/theme-next/theme-next-fancybox
 # To install 3.x: https://github.com/theme-next/theme-next-fancybox3
-fancybox: false
+fancybox: true
 
 # Polyfill to remove click delays on browsers with touch UIs.
 # Dependencies: https://github.com/theme-next/theme-next-fastclick
@@ -1212,3 +1231,18 @@ vendors:
 css: css
 js: js
 images: images
+
+
+daovoice: true
+daovoice_app_id: 7e15e796
+
+mylinks:
+  - nickname: 从从  # 友链名称
+    avatar: /themes/source/images/cczzrs.jpg  # 友链头像
+    site: https://cczzrs.me  # 友链地址
+    info: Dream is what life for.  # 友链说明
+
+  - nickname: 青果先生  # 友链名称
+    avatar: https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/003.jpg  # 友链头像
+    site: https://blog.enjoytoshare.club  # 友链地址
+    info: Sometimes your whole life boils down to one insame move.  # 友链说明

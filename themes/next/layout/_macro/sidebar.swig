@@ -27,9 +27,11 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             {% if theme.avatar.url %}
+            <a href="/">
               <img class="site-author-image" itemprop="image"
                 src="{{ url_for( theme.avatar.url | default(theme.images + '/avatar.gif') ) }}"
                 alt="{{ author }}"/>
+             </a>
             {% endif %}
               <p class="site-author-name" itemprop="name">{{ author }}</p>
               <div class="site-description motion-element" itemprop="description">{{ description }}</div>
@@ -152,8 +154,10 @@
           {% if theme.links %}
             <div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.links_layout | default('inline') }}">
               <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}"></i>
-                {{ theme.links_title }}
+                <a href="/links">
+                  <i class="fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}"></i>
+                  {{ theme.links_title }}
+                </a>
               </div>
               <ul class="links-of-blogroll-list">
                 {% for blogrollText, blogrollURL in theme.links %}
@@ -162,6 +166,15 @@
                   </li>
                 {% endfor %}
               </ul>
+            </div>
+          {% else %}
+            <div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.links_layout | default('inline') }}">
+              <div class="links-of-blogroll-title">
+                <a href="/links">
+                  <i class="fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}"></i>
+                  {{ theme.links_title }}
+                </a>
+              </div>
             </div>
           {% endif %}
 
@@ -191,7 +204,17 @@
             {% else %}
               <div class="post-toc-content">{{ toc }}</div>
             {% endif %}
-
+            {% if site.tags.length > 1 %}
+              <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+              <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+              <div class="widget-wrap">
+                  <div id="myCanvasContainer" class="widget tagcloud">
+                      <canvas width="250" height="250" id="resCanvas" style="width=100%">
+                          {{ list_tags() }}
+                      </canvas>
+                  </div>
+              </div>
+            {% endif %}
           </div>
         </div>
       <!--/noindex-->

@@ -4,12 +4,12 @@
 
 # Site
 title: cczzrs Blog
-subtitle: Dreams are you live for
-description: cczzrs 从从的官网
+subtitle: 从从的博客
+description: Dreams are you live for
 keywords: cczzrs
 author: cczzrs
 language: zh-CN
-timezone: CN
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -75,7 +75,27 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: next
 
+# #############cczzrs add
+# RSS订阅
+plugin:
+- hexo-generator-feed
+#Feed Atom
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
+# 搜索服务
+search:
+  path: search.xml
+  字段: post
+  格式: html
+  limit: 10000
+# #############cczzrs add
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/cczzrs/cczzrs.github.io.git
+  branch: master

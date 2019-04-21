@@ -281,6 +281,13 @@
       {% endif %}
 
       {% if is_index %}
+        <!-- 添加文章摘要图片 -->
+        {% if post.summary_img  %}
+          <div class="out-img-topic">
+            <img src={{ post.summary_img }} class="img-topic">
+          </div>
+        {% endif %}
+        <!-- 添加文章摘要图片 -->
         {% if post.description and theme.excerpt_description %}
           {{ post.description }}
           <!--noindex-->
@@ -363,7 +370,7 @@
       {% if post.tags and post.tags.length and not is_index %}
         <div class="post-tags">
           {% for tag in post.tags %}
-            <a href="{{ url_for(tag.path) }}" rel="tag"># {{ tag.name }}</a>
+            <a href="{{ url_for(tag.path) }}" rel="tag"><i class="fa fa-envira"></i> {{ tag.name }}</a>
           {% endfor %}
         </div>
       {% endif %}

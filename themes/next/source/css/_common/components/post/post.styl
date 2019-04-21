@@ -43,6 +43,25 @@
   if hexo-config('motion.transition.post_body') { .post-body { opacity: 0; } }
   if hexo-config('motion.transition.coll_header') { .collection-title { opacity: 0; } }
 }
+/*添加下面的CSS代码来修改博文标题样式*/
+// 把主页标题样式一同修改，可以把 .page-post-detail 去掉即可
+//.page-post-detail .post-title {
+.post-title {
+  font-size: 26px;
+  text-align: center;
+  word-break: break-word;
+  font-weight: $posts-expand-title-font-weight
+  background-color: #FFFFFF;
+  border-radius:.3em;
+  line-height:1em;
+  padding-bottom:.12em;
+  padding-top:.12em;
+  box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.55);
+  +mobile() {
+    font-size: 22px;
+  }
+}
+/*添加上面的CSS代码来修改博文标题样式*/
 
 @import "post-expand";
 @import "post-collapse";

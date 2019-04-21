@@ -26,3 +26,13 @@
     sidebar: {{ page.sidebar | json_encode }},
   };
 </script>
+<script>
+    (function(){
+        if('{{ page.password }}'){
+            if (prompt('请输入查看密码') !== '{{ page.password }}'){
+                alert('密码不正确,请询问主编大大！（WX:cczzrs）');
+                history.back();
+            }
+        }
+    })();
+</script>

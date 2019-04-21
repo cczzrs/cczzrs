@@ -1,1 +1,77 @@
 // Custom styles.
+// 页面代码背景 page code background-color
+.code ::selection {
+    background: #2593a6;
+    color: #fff;
+}
+
+
+//gitalk code background-color
+.gt-container .gt-comment-content .highlight pre, .markdown-body pre{
+    background-color: #2d2d2d;
+}
+.gt-container .gt-comment-content .highlight ::selection {
+    background: #2593a6;
+    color: #fff;
+}
+
+// 去掉顶部黑线
+.headband {display:none;}
+
+// 修改按键阅读全文颜色（button）样式
+.btn {
+  color: #49b1f5;
+  background: #fff;
+  border: 2px solid #49b1f5;
+}
+// 按键（button）点击时样式
+.btn:hover {
+  border-color: #49b1f5;
+  color: #fff;
+  background: #49b1f5;
+}
+// 文章目录默认展开
+.post-toc .nav .nav-child { display: block; }
+// 文章目录字体大小调整
+.post-toc ol {
+  font-size : 13px;
+}
+
+// 左侧样式 top
+.header-inner{
+  box-shadow: inset 0px 0px 20px 4px rgba(0, 0, 0, 0.55);
+  border-radius: 22px;
+}
+// 左侧 top 选中项的样式
+.menu-item-active a{
+  color: red;
+}
+
+// 左侧样式 bottom
+.sidebar-inner{
+  box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.55);
+  border-radius: 22px;
+  overflow-y: hidden;
+}
+// 左侧底部当前浏览进度样式
+.back-to-top {
+  background: #000000;
+  color: #ffffff;
+  opacity: 1;
+}
+
+// 右侧样式,右侧主题样式
+.content-wrap{
+  box-shadow: 1px 0px 20px 4px rgba(0, 0, 0, 0.55);
+  border-radius: 22px;
+}
+
+// 主题内容样式
+.posts-expand{
+  padding-top: 0px;
+}
+
+// 头像样式
+.site-author-image {
+  border-radius: 100%;
+}
