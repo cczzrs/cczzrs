@@ -70,6 +70,8 @@
           {% include 'schedule.swig' %}
         {% elif page.type === 'links' %}
           {% include 'links.swig' %}
+        {% elif page.type === 'Glinks' %}
+          {% include 'Glinks.swig' %}
         {% else %}
           {{ page.content }}
         {% endif %}

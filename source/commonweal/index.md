@@ -9,6 +9,6 @@ date: 2019-04-17 03:53:30
 
 
 {% gp 2-1 %}
-![](themes/next/source/images/wechat.jpg) 微信
-![](themes/next/source/images/alipay.jpg) 支付宝
+![](/images/wechat.jpg) 微信
+![](/images/alipay.jpg) 支付宝
 {% endgp %}

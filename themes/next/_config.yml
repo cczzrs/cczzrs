@@ -35,10 +35,14 @@ cache:
 # ---------------------------------------------------------------
 
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
+  small: /images/favicon-16x16-next.ico
+  medium: /images/favicon-32x32-next.ico
+  apple_touch_icon: /images/logo.png
+  safari_pinned_tab: /images/logo.png
+#  small: /images/favicon-16x16-next.png
+#  medium: /images/favicon-32x32-next.png
+#  apple_touch_icon: /images/apple-touch-icon-next.png
+#  safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
@@ -66,13 +70,13 @@ footer:
 
   powered:
     # Hexo link (Powered by Hexo).
-    enable: true
+    enable: false
     # Version info of Hexo after Hexo link (vX.X.X).
     version: true
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
-    enable: true
+    enable: false
     # Version info of NexT after scheme info (vX.X.X).
     version: true
 
@@ -165,11 +169,12 @@ menu:
   tags: /tags/ || tags
   # 分类页
   categories: /categories/ || th
-  sitemap: /sitemap.xml || sitemap
   # 留言板页
   message: /Message/ || comments
   # 我的页
   me: /me/ || user
+  # 关于页
+  about: /about/ || anchor
   # 公益 404
   commonweal: /commonweal/ || heartbeat
 
@@ -206,8 +211,8 @@ site_state: true
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  GitHub: https://github.com/cczzrs || github
   E-Mail: mailto:cwt@cczzrs.com || envelope
+  GitHub: https://github.com/cczzrs || github
   DockerHub: https://hub.docker.com/u/cczzrs || dockerhub
   #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
@@ -221,15 +226,25 @@ social:
 
 social_icons:
   enable: true
-  icons_only: false
+  icons_only: true
   transition: false
+  Docker: docker
 
 # Blog rolls
 links_icon: link
-links_title: Links 友情链接
+links_title: 友情链接
 links_layout: block
 #links_layout: inline
 links:
+  # rss: /atom.xml
+  #Title: http://example.com
+
+# Blog rolls
+Glinks_icon: link
+Glinks_title: 官方链接
+Glinks_layout: block
+#Glinks_layout: inline
+Glinks:
   # rss: /atom.xml
   #Title: http://example.com
 
@@ -382,6 +397,7 @@ reward:
   comment: 梦想还是要有的，万一实现了呢。
   wechatpay: /images/wechat.jpg
   alipay: /images/alipay.jpg
+  bitcoin: /images/bitcoin.png
 
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
@@ -403,6 +419,12 @@ post_edit:
   url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name # Link for view source.
   #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name # Link for fork & edit.
 
+# Post wordcount display settings
+# Dependencies: https://github.com/willin/hexo-wordcount
+post_wordcount:
+  item_text: true
+  wordcount: true
+  min2read: true
 
 # ---------------------------------------------------------------
 # Misc Theme Settings
@@ -1246,7 +1268,7 @@ daovoice_app_id: 7e15e796
 
 mylinks:
   - nickname: 从从  # 友链名称
-    avatar: /themes/source/images/cczzrs.jpg  # 友链头像
+    avatar: /images/cczzrs.jpg  # 友链头像
     site: https://cczzrs.me  # 友链地址
     info: Dream is what life for.  # 友链说明
 
@@ -1254,3 +1276,34 @@ mylinks:
     avatar: https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/003.jpg  # 友链头像
     site: https://blog.enjoytoshare.club  # 友链地址
     info: Sometimes your whole life boils down to one insame move.  # 友链说明
+
+myGlinks:
+  - nickname: Hexo  # 官链名称
+    avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg  # 官链头像
+    site: https://hexo.io  # 官链地址
+    info: 快速、简洁且高效的博客框架  # 官链说明
+
+  - nickname: Theme NexT  # 官链名称
+    avatar: https://d33wubrfki0l68.cloudfront.net/2959dbc97f31c80283e67104fe0854e2369e40aa/19f61/images/apple-touch-icon-next.png  # 官链头像
+    site: https://theme-next.org  # 官链地址
+    info: Stay Simple. Stay NexT  # 官链说明
+
+  - nickname: Markdown  # 官链名称
+    avatar: /images/Markdown.png  # 官链头像
+    site: https://guides.github.com/features/mastering-markdown  # 官链地址
+    info: Markdown is a lightweight and easy-to-use syntax for styling all forms of writing on the GitHub platform.  # 官链说明
+
+  - nickname: GitHub  # 官链名称
+    avatar: https://github.com/fluidicon.png  # 官链头像
+    site: https://github.com  # 官链地址
+    info: GitHub is home to the world’s largest community of developers and their projects...  # 官链说明
+
+  - nickname: Node.js  # 官链名称
+    avatar: http://static.nodejs.cn/_static/img/logo.svg  # 官链头像
+    site: http://nodejs.cn  # 官链地址
+    info: Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。  # 官链说明
+
+  - nickname: DaoVoice  # 官链名称
+    avatar: http://dashboard.daovoice.io/favicon.ico  # 官链头像
+    site: http://www.daovoice.io  # 官链地址
+    info: 与客户沟通的绝佳工具 你与客户的距离，我来拉近  # 官链说明

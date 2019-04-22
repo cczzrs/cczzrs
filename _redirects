@@ -1,0 +1,10 @@
+# These rules will change if you change your site’s custom domains or HTTPS settings
+# 如果您更改站点的自定义域或 HTTPS 设置，这些规则将会更改
+
+# Optional: Redirect default Netlify subdomain to primary domain
+# 可选：将默认 Netlify 子域重定向到主域
+https://cczzrs.netlify.com/* https://cczzrs.me/:splat 301!
+
+# Redirect domain aliases to primary domain
+# 将域别名重定向到主域
+https://cczzrs.cc/* https://cczzrs.me/:splat 301!

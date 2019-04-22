@@ -1,3 +1,7 @@
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <div class="powered-by" style="margin: 0 10px;">
+
 <div class="copyright">{#
 #}{% set current = date(Date.now(), "YYYY") %}{#
 #}{% if theme.footer.beian.enable %}{#
@@ -5,10 +9,20 @@
 #}{% endif %}{#
 #}&copy; {% if theme.footer.since and theme.footer.since != current %}{{ theme.footer.since }} – {% endif %}{#
 #}<span itemprop="copyrightYear">{{ current }}</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-{{ theme.footer.icon.name }}"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || author }}</span>
+
+    <span class="with-love" id="animate">
+      <i class="fa fa-{{ theme.footer.icon.name }}"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || author }}</span>
+  </div>
+
+  <div class="powered-by" style="margin: 0 10px;">
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv"> 本站访客数: <span id="busuanzi_value_site_uv"></span></span>
+  </div>
+  <div class="powered-by" style="margin: 0 10px;">
+    <i class="fa fa-eye"></i><span id="busuanzi_container_site_pv"> 本站总访问量: <span id="busuanzi_value_site_pv"></span></span>
+  </div>
+  <br/>
 
   {% if config.symbols_count_time.total_symbols %}
     <span class="post-meta-divider">|</span>

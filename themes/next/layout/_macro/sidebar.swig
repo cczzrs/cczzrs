@@ -151,8 +151,30 @@
           {% endif %}
 
           {# Blogroll #}
-          {% if theme.links %}
             <div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.links_layout | default('inline') }}">
+          {% if theme.Glinks %}
+              <div class="links-of-blogroll-title">
+                <a href="/Glinks">
+                  <i class="fa  fa-fw fa-{{ theme.Glinks_icon | default('globe') | lower }}"></i>
+                  {{ theme.Glinks_title }}
+                </a>
+              </div>
+              <ul class="links-of-blogroll-list">
+                {% for blogrollText, blogrollURL in theme.Glinks %}
+                  <li class="links-of-blogroll-item">
+                    {{ next_url(blogrollURL, blogrollText, {title: blogrollURL}) }}
+                  </li>
+                {% endfor %}
+              </ul>
+          {% else %}
+              <div class="links-of-blogroll-title">
+                <a href="/Glinks">
+                  <i class="fa  fa-fw fa-{{ theme.Glinks_icon | default('globe') | lower }}"></i>
+                  {{ theme.Glinks_title }}
+                </a>
+              </div>
+          {% endif %}
+          {% if theme.links %}
               <div class="links-of-blogroll-title">
                 <a href="/links">
                   <i class="fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}"></i>
@@ -166,17 +188,15 @@
                   </li>
                 {% endfor %}
               </ul>
-            </div>
           {% else %}
-            <div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.links_layout | default('inline') }}">
               <div class="links-of-blogroll-title">
                 <a href="/links">
                   <i class="fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}"></i>
                   {{ theme.links_title }}
                 </a>
               </div>
-            </div>
           {% endif %}
+            </div>
 
           {% if theme.custom_file_path.sidebar %}
             {% set custom_sidebar = '../../../../' + theme.custom_file_path.sidebar %}
@@ -204,7 +224,7 @@
             {% else %}
               <div class="post-toc-content">{{ toc }}</div>
             {% endif %}
-            {% if site.tags.length > 1 %}
+            {% if site.tags.length == 1 %}
               <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
               <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
               <div class="widget-wrap">
