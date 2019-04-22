@@ -284,7 +284,7 @@
         <!-- 添加文章摘要图片 -->
         {% if post.summary_img  %}
           <div class="out-img-topic">
-            <img src={{ post.summary_img }} class="img-topic">
+            <img src={{ post.summary_img }} class="img-topic" style="max-inline-size: 300px;">
           </div>
         {% endif %}
         <!-- 添加文章摘要图片 -->

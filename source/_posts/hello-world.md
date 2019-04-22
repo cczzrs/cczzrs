@@ -1,8 +1,7 @@
 ---
 title: Hello World
 author: cczzrs
-password: Hello2019s
-summary_img:
+summary_img: /images/logo.png
 tags: [npm, hexo, github]
 categories: 博客搭建
 date: 2019-04-17 03:52:15
