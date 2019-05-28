@@ -1299,6 +1299,11 @@ myGlinks:
     site: https://github.com  # 官链地址
     info: GitHub is home to the world’s largest community of developers and their projects...  # 官链说明
 
+  - nickname: Netlify  # 官链名称
+    avatar: /images/netlify.png  # 官链头像
+    site: https://netlify.com  # 官链地址
+    info: Build, deploy, and manage modern web projects...  # 官链说明
+
   - nickname: Node.js  # 官链名称
     avatar: http://static.nodejs.cn/_static/img/logo.svg  # 官链头像
     site: http://nodejs.cn  # 官链地址

@@ -16,13 +16,14 @@
     <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || author }}</span>
   </div>
 
+<!--
   <div class="powered-by" style="margin: 0 10px;">
     <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv"> 本站访客数: <span id="busuanzi_value_site_uv"></span></span>
   </div>
   <div class="powered-by" style="margin: 0 10px;">
     <i class="fa fa-eye"></i><span id="busuanzi_container_site_pv"> 本站总访问量: <span id="busuanzi_value_site_pv"></span></span>
   </div>
-  <br/>
+  <br/>-->
 
   {% if config.symbols_count_time.total_symbols %}
     <span class="post-meta-divider">|</span>
